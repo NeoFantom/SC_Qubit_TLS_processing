@@ -1,0 +1,10 @@
+# Ignore all PNG files in all subdirectories
+**/*.png
+
+# Ignore all ZIP files in all subdirectories
+**/*.zip
+
+# Ignore any folder (and its contents) that starts with "data_raw" in any location
+**/data_raw*/ 
+
+__pycache__/
