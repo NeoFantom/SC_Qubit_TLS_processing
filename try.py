@@ -24,6 +24,6 @@ def extract_pixels(image):
 
 if __name__ == "__main__":
     # Example usage
-    sample_image = cv2.imread('stripe_mask\Q37.png', cv2.IMREAD_GRAYSCALE)
+    sample_image = cv2.imread('stripe_maskr/37.png', cv2.IMREAD_GRAYSCALE)
     unique_pixels = extract_pixels(sample_image)
     print("Unique pixel values:", unique_pixels)
