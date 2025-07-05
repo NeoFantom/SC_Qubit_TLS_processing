@@ -30,7 +30,7 @@ the image list in a non-destructive manner.
 
 
 bg_dir = 'data_cropped'
-mask_dir = 'stripe_mask_manual'
+mask_dir = 'stripe_mask'
 
 def natural_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]

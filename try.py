@@ -3,27 +3,31 @@
 import numpy as np
 import cv2
 
-def extract_pixels(image):
-    """
-    Extracts unique pixel values from a 2D image array.
-    
-    Parameters:
-    image (np.ndarray): A 2D numpy array representing the image.
-    
-    Returns:
-    set: A set of unique pixel values.
-    """
-    if not isinstance(image, np.ndarray):
-        raise ValueError("Input must be a numpy array.")
-    
-    if image.ndim != 2:
-        raise ValueError("Input image must be a 2D array.")
-    
-    unique_pixels = set(image.flatten())
-    return unique_pixels
+data_path = "./TLS_DATA_2024Nov_2025May.npy"
+data = np.load(data_path, allow_pickle=True).item()
+for i in range(0, 72):
+    all_eqlen = len(data[i]["xs"]) == len(data[i]["ys"]) == len(data[i]["times"])
+    print(f'{"all equal length" if all_eqlen else "not all equal length"}')
+    all_list = (type(data[i]["xs"]) is list) and (type(data[i]["ys"]) is list) and (type(data[i]["times"]) is list)
+    print(f'{"all lists" if all_list else "not all lists"}')
+    # ls = set()
+    # for j in range(len(data[i]["xs"])):
+    #     x = data[i]["xs"][j]
+    #     dx = x[1] - x[0]
+    #     b, t = x[0] - dx / 2, x[-1] + dx / 2
+    #     ls.add((b, t))
+    # print(*ls, sep="\n")
 
-if __name__ == "__main__":
-    # Example usage
-    sample_image = cv2.imread('stripe_maskr/37.png', cv2.IMREAD_GRAYSCALE)
-    unique_pixels = extract_pixels(sample_image)
-    print("Unique pixel values:", unique_pixels)
+# xs_lens = set()
+# for q, qdata in data.items():
+#     print(q)
+#     print(type(qdata["xs"]))
+#     xs_lens.add(len(qdata["xs"]))
+
+# xlens = set()
+# for q, qdata in data.items():
+#     for x in qdata["xs"]:
+#         xlens.add(len(x))
+
+# print(f'{xs_lens = }')
+# print(f'{xlens = }')

@@ -8,3 +8,7 @@
 **/data_raw*/ 
 
 __pycache__/
+TLS_DATA/processed.npz
+TLS_DATA/TLS_interpolated.npz
+TLS_DATA/TLS_DATA_2024Nov_2025May.pkl.gz
+TLS_DATA_2024Nov_2025May.npy
